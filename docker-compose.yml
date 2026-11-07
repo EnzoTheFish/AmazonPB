@@ -1,0 +1,34 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: amazon_pb_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+  # Interface web opcional para inspecionar o banco: http://localhost:8081
+  # Subir com: docker compose --profile admin up -d mongo-express
+  mongo-express:
+    image: mongo-express:1
+    profiles: ["admin"]
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/
+      ME_CONFIG_BASICAUTH: "false"
+    depends_on: [mongo]
+
+  # Cache — PREPARADO para o futuro, não sobe por padrão.
+  # Subir com: docker compose --profile cache up -d redis
+  redis:
+    image: redis:7-alpine
+    container_name: amazon_pb_redis
+    profiles: ["cache"]
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru"]
+
+volumes:
+  mongo_data:

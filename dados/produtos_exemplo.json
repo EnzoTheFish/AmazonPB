@@ -1,0 +1,2037 @@
+[
+  {
+    "sku": "NOTE-LEN-IP5",
+    "nome": "Notebook Lenovo IdeaPad Slim 5",
+    "marca": "Lenovo",
+    "categorias": [
+      "Informática",
+      "Eletrônicos"
+    ],
+    "preco": {
+      "$numberDecimal": "3899.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "4599.00"
+    },
+    "estoque": 12,
+    "descricao": "Notebook fino e leve para trabalho e estudo.",
+    "tags": [
+      "notebook",
+      "laptop",
+      "ryzen"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Notebook+Lenovo+IdeaPad+Slim+5",
+        "alt": "Notebook Lenovo IdeaPad Slim 5",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Notebook+Lenovo+IdeaPad+Slim+5+%28detalhe%29",
+        "alt": "Notebook Lenovo IdeaPad Slim 5 (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "processador": "AMD Ryzen 7 7730U",
+      "memoria_ram_gb": 16,
+      "armazenamento": {
+        "tipo": "SSD NVMe",
+        "capacidade_gb": 512
+      },
+      "tela": {
+        "tamanho_pol": 15.6,
+        "resolucao": "1920x1080",
+        "tipo": "IPS"
+      },
+      "sistema_operacional": "Windows 11 Home",
+      "peso_kg": 1.7,
+      "garantia_meses": 12
+    },
+    "avaliacao": {
+      "media": 4.6,
+      "total": 2310
+    },
+    "criado_em": {
+      "$date": "2026-10-02T21:44:03.596Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "NOTE-DEL-INS",
+    "nome": "Notebook Dell Inspiron 15",
+    "marca": "Dell",
+    "categorias": [
+      "Informática",
+      "Eletrônicos"
+    ],
+    "preco": {
+      "$numberDecimal": "3299.00"
+    },
+    "preco_original": null,
+    "estoque": 4,
+    "descricao": "",
+    "tags": [
+      "notebook",
+      "laptop",
+      "intel"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Notebook+Dell+Inspiron+15",
+        "alt": "Notebook Dell Inspiron 15",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Notebook+Dell+Inspiron+15+%28detalhe%29",
+        "alt": "Notebook Dell Inspiron 15 (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "processador": "Intel Core i5-1235U",
+      "memoria_ram_gb": 8,
+      "armazenamento": {
+        "tipo": "SSD",
+        "capacidade_gb": 512
+      },
+      "tela": {
+        "tamanho_pol": 15.6,
+        "resolucao": "1920x1080"
+      },
+      "sistema_operacional": "Windows 11",
+      "garantia_meses": 12
+    },
+    "avaliacao": {
+      "media": 4.3,
+      "total": 980
+    },
+    "criado_em": {
+      "$date": "2026-10-03T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "CEL-SAM-A55",
+    "nome": "Smartphone Samsung Galaxy A55 5G 256GB",
+    "marca": "Samsung",
+    "categorias": [
+      "Eletrônicos",
+      "Celulares"
+    ],
+    "preco": {
+      "$numberDecimal": "2199.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "2699.00"
+    },
+    "estoque": 40,
+    "descricao": "",
+    "tags": [
+      "celular",
+      "android",
+      "5g"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Smartphone+Samsung+Galaxy+A55+5G+256GB",
+        "alt": "Smartphone Samsung Galaxy A55 5G 256GB",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Smartphone+Samsung+Galaxy+A55+5G+256GB+%28detalhe%29",
+        "alt": "Smartphone Samsung Galaxy A55 5G 256GB (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tela": {
+        "tamanho_pol": 6.6,
+        "tipo": "Super AMOLED",
+        "taxa_hz": 120
+      },
+      "armazenamento_gb": 256,
+      "memoria_ram_gb": 8,
+      "camera": {
+        "traseira_mp": [
+          50,
+          12,
+          5
+        ],
+        "frontal_mp": 32
+      },
+      "bateria_mah": 5000,
+      "resistencia": "IP67",
+      "cores": [
+        "Azul",
+        "Preto",
+        "Lilás"
+      ]
+    },
+    "avaliacao": {
+      "media": 4.7,
+      "total": 5400
+    },
+    "criado_em": {
+      "$date": "2026-10-04T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "CEL-APL-15",
+    "nome": "iPhone 15 128GB",
+    "marca": "Apple",
+    "categorias": [
+      "Eletrônicos",
+      "Celulares"
+    ],
+    "preco": {
+      "$numberDecimal": "5299.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "5999.00"
+    },
+    "estoque": 15,
+    "descricao": "",
+    "tags": [
+      "celular",
+      "ios",
+      "iphone"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=iPhone+15+128GB",
+        "alt": "iPhone 15 128GB",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=iPhone+15+128GB+%28detalhe%29",
+        "alt": "iPhone 15 128GB (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "chip": "A16 Bionic",
+      "armazenamento_gb": 128,
+      "tela": {
+        "tamanho_pol": 6.1,
+        "tipo": "Super Retina XDR OLED"
+      },
+      "camera": {
+        "principal_mp": 48,
+        "ultra_wide_mp": 12
+      },
+      "conector": "USB-C"
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 7100
+    },
+    "criado_em": {
+      "$date": "2026-10-05T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "FONE-JBL-T520",
+    "nome": "Fone de Ouvido Bluetooth JBL Tune 520BT",
+    "marca": "JBL",
+    "categorias": [
+      "Eletrônicos",
+      "Áudio"
+    ],
+    "preco": {
+      "$numberDecimal": "229.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "299.00"
+    },
+    "estoque": 80,
+    "descricao": "",
+    "tags": [
+      "fone",
+      "headphone",
+      "bluetooth"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Fone+de+Ouvido+Bluetooth+JBL+Tune+520BT",
+        "alt": "Fone de Ouvido Bluetooth JBL Tune 520BT",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Fone+de+Ouvido+Bluetooth+JBL+Tune+520BT+%28detalhe%29",
+        "alt": "Fone de Ouvido Bluetooth JBL Tune 520BT (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tipo": "Over-ear",
+      "conexao": "Bluetooth 5.3",
+      "autonomia_h": 57,
+      "microfone": true,
+      "carregamento": "USB-C",
+      "cores": [
+        "Preto",
+        "Azul",
+        "Branco"
+      ]
+    },
+    "avaliacao": {
+      "media": 4.6,
+      "total": 12000
+    },
+    "criado_em": {
+      "$date": "2026-10-06T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "KIN-AMZ-11",
+    "nome": "Kindle 11ª Geração 16GB",
+    "marca": "Amazon",
+    "categorias": [
+      "Eletrônicos",
+      "Livros"
+    ],
+    "preco": {
+      "$numberDecimal": "549.00"
+    },
+    "preco_original": null,
+    "estoque": 60,
+    "descricao": "",
+    "tags": [
+      "ereader",
+      "kindle",
+      "leitura"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Kindle+11%C2%AA+Gera%C3%A7%C3%A3o+16GB",
+        "alt": "Kindle 11ª Geração 16GB",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Kindle+11%C2%AA+Gera%C3%A7%C3%A3o+16GB+%28detalhe%29",
+        "alt": "Kindle 11ª Geração 16GB (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tela": {
+        "tamanho_pol": 6,
+        "resolucao_ppi": 300,
+        "luz_embutida": true
+      },
+      "armazenamento_gb": 16,
+      "bateria_semanas": 6,
+      "a_prova_dagua": false
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 25000
+    },
+    "criado_em": {
+      "$date": "2026-10-07T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "MON-LG-27",
+    "nome": "Monitor LG UltraGear 27\" 144Hz",
+    "marca": "LG",
+    "categorias": [
+      "Informática",
+      "Games"
+    ],
+    "preco": {
+      "$numberDecimal": "1299.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "1599.00"
+    },
+    "estoque": 9,
+    "descricao": "",
+    "tags": [
+      "monitor",
+      "gamer"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Monitor+LG+UltraGear+27%22+144Hz",
+        "alt": "Monitor LG UltraGear 27\" 144Hz",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Monitor+LG+UltraGear+27%22+144Hz+%28detalhe%29",
+        "alt": "Monitor LG UltraGear 27\" 144Hz (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tamanho_pol": 27,
+      "resolucao": "2560x1440",
+      "taxa_hz": 144,
+      "painel": "IPS",
+      "tempo_resposta_ms": 1,
+      "entradas": [
+        "HDMI x2",
+        "DisplayPort"
+      ],
+      "hdr": "HDR10"
+    },
+    "avaliacao": {
+      "media": 4.7,
+      "total": 3200
+    },
+    "criado_em": {
+      "$date": "2026-10-08T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "TEC-LOG-MXK",
+    "nome": "Teclado sem fio Logitech MX Keys",
+    "marca": "Logitech",
+    "categorias": [
+      "Informática"
+    ],
+    "preco": {
+      "$numberDecimal": "699.00"
+    },
+    "preco_original": null,
+    "estoque": 30,
+    "descricao": "",
+    "tags": [
+      "teclado",
+      "wireless"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Teclado+sem+fio+Logitech+MX+Keys",
+        "alt": "Teclado sem fio Logitech MX Keys",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Teclado+sem+fio+Logitech+MX+Keys+%28detalhe%29",
+        "alt": "Teclado sem fio Logitech MX Keys (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "layout": "ABNT2",
+      "conexao": [
+        "Bluetooth",
+        "Logi Bolt"
+      ],
+      "retroiluminado": true,
+      "bateria": "Recarregável, até 10 dias",
+      "compatibilidade": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ]
+    },
+    "avaliacao": {
+      "media": 4.7,
+      "total": 1800
+    },
+    "criado_em": {
+      "$date": "2026-10-09T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "GAM-SNY-PS5",
+    "nome": "Console PlayStation 5 Slim Digital",
+    "marca": "Sony",
+    "categorias": [
+      "Games",
+      "Eletrônicos"
+    ],
+    "preco": {
+      "$numberDecimal": "3599.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "3999.00"
+    },
+    "estoque": 7,
+    "descricao": "",
+    "tags": [
+      "console",
+      "playstation"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/1b1b2f/ff9900/png?text=Console+PlayStation+5+Slim+Digital",
+        "alt": "Console PlayStation 5 Slim Digital",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/1b1b2f/ff9900/png?text=Console+PlayStation+5+Slim+Digital+%28detalhe%29",
+        "alt": "Console PlayStation 5 Slim Digital (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "armazenamento": {
+        "tipo": "SSD",
+        "capacidade_tb": 1
+      },
+      "resolucao_max": "4K 120fps",
+      "midia_fisica": false,
+      "controles_inclusos": 1
+    },
+    "avaliacao": {
+      "media": 4.9,
+      "total": 8800
+    },
+    "criado_em": {
+      "$date": "2026-10-10T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "GAM-NIN-SWO",
+    "nome": "Nintendo Switch OLED",
+    "marca": "Nintendo",
+    "categorias": [
+      "Games"
+    ],
+    "preco": {
+      "$numberDecimal": "2299.00"
+    },
+    "preco_original": null,
+    "estoque": 3,
+    "descricao": "",
+    "tags": [
+      "console",
+      "portatil"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/1b1b2f/ff9900/png?text=Nintendo+Switch+OLED",
+        "alt": "Nintendo Switch OLED",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/1b1b2f/ff9900/png?text=Nintendo+Switch+OLED+%28detalhe%29",
+        "alt": "Nintendo Switch OLED (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tela": {
+        "tamanho_pol": 7,
+        "tipo": "OLED"
+      },
+      "armazenamento_gb": 64,
+      "modos": [
+        "TV",
+        "Mesa",
+        "Portátil"
+      ],
+      "cor": "Branco"
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 6400
+    },
+    "criado_em": {
+      "$date": "2026-10-11T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "LIV-ARQ-LIMPA",
+    "nome": "Arquitetura Limpa",
+    "marca": "Alta Books",
+    "categorias": [
+      "Livros",
+      "Tecnologia"
+    ],
+    "preco": {
+      "$numberDecimal": "89.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "119.90"
+    },
+    "estoque": 50,
+    "descricao": "",
+    "tags": [
+      "software",
+      "programacao"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=Arquitetura+Limpa",
+        "alt": "Arquitetura Limpa",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=Arquitetura+Limpa+%28detalhe%29",
+        "alt": "Arquitetura Limpa (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "autor": "Robert C. Martin",
+      "editora": "Alta Books",
+      "isbn": "978-8550804606",
+      "paginas": 432,
+      "idioma": "Português",
+      "formato": "Capa comum",
+      "edicao": 1
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 4300
+    },
+    "criado_em": {
+      "$date": "2026-10-12T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "LIV-DDIA",
+    "nome": "Designing Data-Intensive Applications",
+    "marca": "O'Reilly",
+    "categorias": [
+      "Livros",
+      "Tecnologia"
+    ],
+    "preco": {
+      "$numberDecimal": "329.00"
+    },
+    "preco_original": null,
+    "estoque": 14,
+    "descricao": "",
+    "tags": [
+      "banco de dados",
+      "nosql",
+      "mongodb"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=Designing+Data-Intensive+Applications",
+        "alt": "Designing Data-Intensive Applications",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=Designing+Data-Intensive+Applications+%28detalhe%29",
+        "alt": "Designing Data-Intensive Applications (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "autor": "Martin Kleppmann",
+      "editora": "O'Reilly Media",
+      "isbn": "978-1449373320",
+      "paginas": 616,
+      "idioma": "Inglês",
+      "formato": "Capa comum",
+      "assuntos": [
+        "bancos de dados",
+        "sistemas distribuídos"
+      ]
+    },
+    "avaliacao": {
+      "media": 4.9,
+      "total": 9100
+    },
+    "criado_em": {
+      "$date": "2026-10-13T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "LIV-HABITOS",
+    "nome": "Hábitos Atômicos",
+    "marca": "Alta Life",
+    "categorias": [
+      "Livros",
+      "Autoajuda"
+    ],
+    "preco": {
+      "$numberDecimal": "49.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "69.90"
+    },
+    "estoque": 120,
+    "descricao": "",
+    "tags": [
+      "produtividade"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=H%C3%A1bitos+At%C3%B4micos",
+        "alt": "Hábitos Atômicos",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=H%C3%A1bitos+At%C3%B4micos+%28detalhe%29",
+        "alt": "Hábitos Atômicos (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "autor": "James Clear",
+      "editora": "Alta Life",
+      "isbn": "978-8550807560",
+      "paginas": 320,
+      "idioma": "Português",
+      "formato": "Capa comum"
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 56000
+    },
+    "criado_em": {
+      "$date": "2026-10-14T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "MOD-CAM-BAS",
+    "nome": "Camiseta Básica Algodão Premium",
+    "marca": "Hering",
+    "categorias": [
+      "Moda",
+      "Masculino"
+    ],
+    "preco": {
+      "$numberDecimal": "59.90"
+    },
+    "preco_original": null,
+    "estoque": 200,
+    "descricao": "",
+    "tags": [
+      "camiseta",
+      "basica"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/fde2e4/333333/png?text=Camiseta+B%C3%A1sica+Algod%C3%A3o+Premium",
+        "alt": "Camiseta Básica Algodão Premium",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/fde2e4/333333/png?text=Camiseta+B%C3%A1sica+Algod%C3%A3o+Premium+%28detalhe%29",
+        "alt": "Camiseta Básica Algodão Premium (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tamanhos": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ],
+      "cores": [
+        "Preto",
+        "Branco",
+        "Cinza",
+        "Azul-marinho"
+      ],
+      "material": "100% algodão",
+      "modelagem": "Regular",
+      "gola": "Careca"
+    },
+    "avaliacao": {
+      "media": 4.4,
+      "total": 3100
+    },
+    "criado_em": {
+      "$date": "2026-10-15T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "MOD-TEN-NIK",
+    "nome": "Tênis Nike Revolution 7",
+    "marca": "Nike",
+    "categorias": [
+      "Moda",
+      "Esportes",
+      "Calçados"
+    ],
+    "preco": {
+      "$numberDecimal": "349.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "449.90"
+    },
+    "estoque": 35,
+    "descricao": "",
+    "tags": [
+      "tenis",
+      "corrida"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/fde2e4/333333/png?text=T%C3%AAnis+Nike+Revolution+7",
+        "alt": "Tênis Nike Revolution 7",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/fde2e4/333333/png?text=T%C3%AAnis+Nike+Revolution+7+%28detalhe%29",
+        "alt": "Tênis Nike Revolution 7 (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "numeracao": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "cores": [
+        "Preto/Branco",
+        "Cinza"
+      ],
+      "material_cabedal": "Malha",
+      "solado": "Borracha",
+      "indicado_para": "Corrida leve"
+    },
+    "avaliacao": {
+      "media": 4.5,
+      "total": 2700
+    },
+    "criado_em": {
+      "$date": "2026-10-16T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "CAS-AIR-MON",
+    "nome": "Fritadeira Air Fryer Mondial 4L",
+    "marca": "Mondial",
+    "categorias": [
+      "Casa e Cozinha",
+      "Eletroportáteis"
+    ],
+    "preco": {
+      "$numberDecimal": "299.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "399.90"
+    },
+    "estoque": 45,
+    "descricao": "",
+    "tags": [
+      "airfryer",
+      "fritadeira"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Fritadeira+Air+Fryer+Mondial+4L",
+        "alt": "Fritadeira Air Fryer Mondial 4L",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Fritadeira+Air+Fryer+Mondial+4L+%28detalhe%29",
+        "alt": "Fritadeira Air Fryer Mondial 4L (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "capacidade_l": 4,
+      "potencia_w": 1500,
+      "voltagem": [
+        "127V",
+        "220V"
+      ],
+      "temperatura_max_c": 200,
+      "timer_min": 60,
+      "cor": "Preto"
+    },
+    "avaliacao": {
+      "media": 4.6,
+      "total": 15400
+    },
+    "criado_em": {
+      "$date": "2026-10-17T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "CAS-CAF-NES",
+    "nome": "Cafeteira Nespresso Essenza Mini",
+    "marca": "Nespresso",
+    "categorias": [
+      "Casa e Cozinha"
+    ],
+    "preco": {
+      "$numberDecimal": "449.00"
+    },
+    "preco_original": null,
+    "estoque": 22,
+    "descricao": "",
+    "tags": [
+      "cafe",
+      "capsula"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Cafeteira+Nespresso+Essenza+Mini",
+        "alt": "Cafeteira Nespresso Essenza Mini",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Cafeteira+Nespresso+Essenza+Mini+%28detalhe%29",
+        "alt": "Cafeteira Nespresso Essenza Mini (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "pressao_bar": 19,
+      "reservatorio_ml": 600,
+      "voltagem": "127V",
+      "compatibilidade_capsulas": "Nespresso Original",
+      "dimensoes_cm": {
+        "a": 20,
+        "l": 8,
+        "p": 33
+      }
+    },
+    "avaliacao": {
+      "media": 4.7,
+      "total": 6900
+    },
+    "criado_em": {
+      "$date": "2026-10-18T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "CAS-ASP-WAP",
+    "nome": "Aspirador Robô WAP Robot W90",
+    "marca": "WAP",
+    "categorias": [
+      "Casa e Cozinha"
+    ],
+    "preco": {
+      "$numberDecimal": "899.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "1199.00"
+    },
+    "estoque": 0,
+    "descricao": "",
+    "tags": [
+      "robo",
+      "limpeza"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Aspirador+Rob%C3%B4+WAP+Robot+W90",
+        "alt": "Aspirador Robô WAP Robot W90",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Aspirador+Rob%C3%B4+WAP+Robot+W90+%28detalhe%29",
+        "alt": "Aspirador Robô WAP Robot W90 (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "autonomia_min": 100,
+      "mapeamento": "Giroscópio",
+      "app": true,
+      "funcoes": [
+        "Aspira",
+        "Varre",
+        "Passa pano"
+      ],
+      "reservatorio_ml": 300
+    },
+    "avaliacao": {
+      "media": 4.2,
+      "total": 1500
+    },
+    "criado_em": {
+      "$date": "2026-10-19T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "ESP-HAL-10",
+    "nome": "Kit Halteres Emborrachados 10kg",
+    "marca": "Kikos",
+    "categorias": [
+      "Esportes"
+    ],
+    "preco": {
+      "$numberDecimal": "189.90"
+    },
+    "preco_original": null,
+    "estoque": 18,
+    "descricao": "",
+    "tags": [
+      "musculacao",
+      "academia"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/e8f5e9/333333/png?text=Kit+Halteres+Emborrachados+10kg",
+        "alt": "Kit Halteres Emborrachados 10kg",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/e8f5e9/333333/png?text=Kit+Halteres+Emborrachados+10kg+%28detalhe%29",
+        "alt": "Kit Halteres Emborrachados 10kg (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "peso_total_kg": 10,
+      "itens": [
+        "2 barras",
+        "4 anilhas de 2kg",
+        "2 anilhas de 0,5kg"
+      ],
+      "material": "Ferro emborrachado"
+    },
+    "avaliacao": {
+      "media": 4.5,
+      "total": 870
+    },
+    "criado_em": {
+      "$date": "2026-10-20T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "ESP-GAR-INOX",
+    "nome": "Garrafa Térmica Inox 1L",
+    "marca": "Stanley",
+    "categorias": [
+      "Esportes",
+      "Casa e Cozinha"
+    ],
+    "preco": {
+      "$numberDecimal": "279.00"
+    },
+    "preco_original": null,
+    "estoque": 70,
+    "descricao": "",
+    "tags": [
+      "garrafa",
+      "termica"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/e8f5e9/333333/png?text=Garrafa+T%C3%A9rmica+Inox+1L",
+        "alt": "Garrafa Térmica Inox 1L",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/e8f5e9/333333/png?text=Garrafa+T%C3%A9rmica+Inox+1L+%28detalhe%29",
+        "alt": "Garrafa Térmica Inox 1L (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "capacidade_ml": 1000,
+      "mantem_gelado_h": 24,
+      "mantem_quente_h": 20,
+      "material": "Aço inox 18/8",
+      "cores": [
+        "Verde",
+        "Preto",
+        "Creme"
+      ]
+    },
+    "avaliacao": {
+      "media": 4.9,
+      "total": 21000
+    },
+    "criado_em": {
+      "$date": "2026-10-21T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "TV-SAM-55Q",
+    "nome": "Smart TV Samsung 55\" QLED 4K Q60D",
+    "marca": "Samsung",
+    "categorias": [
+      "Eletrônicos",
+      "TV e Vídeo"
+    ],
+    "preco": {
+      "$numberDecimal": "2999.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "3699.00"
+    },
+    "estoque": 11,
+    "descricao": "",
+    "tags": [
+      "tv",
+      "smart tv",
+      "4k"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Smart+TV+Samsung+55%22+QLED+4K+Q60D",
+        "alt": "Smart TV Samsung 55\" QLED 4K Q60D",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Smart+TV+Samsung+55%22+QLED+4K+Q60D+%28detalhe%29",
+        "alt": "Smart TV Samsung 55\" QLED 4K Q60D (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tamanho_pol": 55,
+      "resolucao": "3840x2160",
+      "tecnologia": "QLED",
+      "hdr": [
+        "HDR10+",
+        "HLG"
+      ],
+      "sistema": "Tizen",
+      "hdmi": 3,
+      "usb": 2,
+      "assistentes": [
+        "Bixby",
+        "Alexa integrada"
+      ]
+    },
+    "avaliacao": {
+      "media": 4.7,
+      "total": 4800
+    },
+    "criado_em": {
+      "$date": "2026-10-22T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "ECHO-DOT-5",
+    "nome": "Echo Dot 5ª Geração com Alexa",
+    "marca": "Amazon",
+    "categorias": [
+      "Eletrônicos",
+      "Casa Inteligente"
+    ],
+    "preco": {
+      "$numberDecimal": "379.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "479.00"
+    },
+    "estoque": 150,
+    "descricao": "",
+    "tags": [
+      "alexa",
+      "smart speaker"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Echo+Dot+5%C2%AA+Gera%C3%A7%C3%A3o+com+Alexa",
+        "alt": "Echo Dot 5ª Geração com Alexa",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Echo+Dot+5%C2%AA+Gera%C3%A7%C3%A3o+com+Alexa+%28detalhe%29",
+        "alt": "Echo Dot 5ª Geração com Alexa (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "assistente": "Alexa",
+      "conexao": [
+        "Wi-Fi",
+        "Bluetooth"
+      ],
+      "sensor_temperatura": true,
+      "cores": [
+        "Preta",
+        "Branca",
+        "Azul"
+      ],
+      "alimentacao": "Fonte 15W"
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 38000
+    },
+    "criado_em": {
+      "$date": "2026-10-23T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "TAB-SAM-S9FE",
+    "nome": "Tablet Samsung Galaxy Tab S9 FE 128GB",
+    "marca": "Samsung",
+    "categorias": [
+      "Eletrônicos",
+      "Informática"
+    ],
+    "preco": {
+      "$numberDecimal": "2499.00"
+    },
+    "preco_original": null,
+    "estoque": 16,
+    "descricao": "",
+    "tags": [
+      "tablet",
+      "android"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Tablet+Samsung+Galaxy+Tab+S9+FE+128GB",
+        "alt": "Tablet Samsung Galaxy Tab S9 FE 128GB",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Tablet+Samsung+Galaxy+Tab+S9+FE+128GB+%28detalhe%29",
+        "alt": "Tablet Samsung Galaxy Tab S9 FE 128GB (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tela": {
+        "tamanho_pol": 10.9,
+        "tipo": "TFT LCD",
+        "taxa_hz": 90
+      },
+      "armazenamento_gb": 128,
+      "memoria_ram_gb": 6,
+      "caneta_inclusa": true,
+      "bateria_mah": 8000,
+      "resistencia": "IP68"
+    },
+    "avaliacao": {
+      "media": 4.6,
+      "total": 2100
+    },
+    "criado_em": {
+      "$date": "2026-10-24T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "SMW-APL-S9",
+    "nome": "Apple Watch Series 9 GPS 41mm",
+    "marca": "Apple",
+    "categorias": [
+      "Eletrônicos",
+      "Wearables"
+    ],
+    "preco": {
+      "$numberDecimal": "3299.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "3999.00"
+    },
+    "estoque": 8,
+    "descricao": "",
+    "tags": [
+      "smartwatch",
+      "relogio"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Apple+Watch+Series+9+GPS+41mm",
+        "alt": "Apple Watch Series 9 GPS 41mm",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=Apple+Watch+Series+9+GPS+41mm+%28detalhe%29",
+        "alt": "Apple Watch Series 9 GPS 41mm (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "caixa": {
+        "tamanho_mm": 41,
+        "material": "Alumínio"
+      },
+      "chip": "S9 SiP",
+      "sensores": [
+        "Oxigênio no sangue",
+        "ECG",
+        "Frequência cardíaca",
+        "Temperatura"
+      ],
+      "resistencia_agua_m": 50,
+      "bateria_h": 18
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 3900
+    },
+    "criado_em": {
+      "$date": "2026-10-25T21:44:03.597Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.597Z"
+    }
+  },
+  {
+    "sku": "CAM-GOP-H12",
+    "nome": "Câmera GoPro HERO12 Black",
+    "marca": "GoPro",
+    "categorias": [
+      "Eletrônicos",
+      "Câmeras"
+    ],
+    "preco": {
+      "$numberDecimal": "2599.00"
+    },
+    "preco_original": null,
+    "estoque": 5,
+    "descricao": "",
+    "tags": [
+      "camera",
+      "acao"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=C%C3%A2mera+GoPro+HERO12+Black",
+        "alt": "Câmera GoPro HERO12 Black",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/232f3e/ffffff/png?text=C%C3%A2mera+GoPro+HERO12+Black+%28detalhe%29",
+        "alt": "Câmera GoPro HERO12 Black (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "video_max": "5.3K 60fps",
+      "foto_mp": 27,
+      "estabilizacao": "HyperSmooth 6.0",
+      "a_prova_dagua_m": 10,
+      "bateria_mah": 1720,
+      "acessorios": [
+        "Bateria extra",
+        "Suporte curvo"
+      ]
+    },
+    "avaliacao": {
+      "media": 4.6,
+      "total": 1200
+    },
+    "criado_em": {
+      "$date": "2026-10-26T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "MOU-LOG-G203",
+    "nome": "Mouse Gamer Logitech G203 Lightsync",
+    "marca": "Logitech",
+    "categorias": [
+      "Informática",
+      "Games"
+    ],
+    "preco": {
+      "$numberDecimal": "129.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "179.90"
+    },
+    "estoque": 95,
+    "descricao": "",
+    "tags": [
+      "mouse",
+      "gamer",
+      "rgb"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Mouse+Gamer+Logitech+G203+Lightsync",
+        "alt": "Mouse Gamer Logitech G203 Lightsync",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=Mouse+Gamer+Logitech+G203+Lightsync+%28detalhe%29",
+        "alt": "Mouse Gamer Logitech G203 Lightsync (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "dpi_max": 8000,
+      "botoes": 6,
+      "iluminacao": "RGB Lightsync",
+      "conexao": "USB",
+      "peso_g": 85
+    },
+    "avaliacao": {
+      "media": 4.7,
+      "total": 27000
+    },
+    "criado_em": {
+      "$date": "2026-10-27T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "SSD-KIN-1TB",
+    "nome": "SSD Kingston NV2 1TB NVMe M.2",
+    "marca": "Kingston",
+    "categorias": [
+      "Informática"
+    ],
+    "preco": {
+      "$numberDecimal": "399.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "499.00"
+    },
+    "estoque": 60,
+    "descricao": "",
+    "tags": [
+      "ssd",
+      "armazenamento"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=SSD+Kingston+NV2+1TB+NVMe+M.2",
+        "alt": "SSD Kingston NV2 1TB NVMe M.2",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/37475a/ffffff/png?text=SSD+Kingston+NV2+1TB+NVMe+M.2+%28detalhe%29",
+        "alt": "SSD Kingston NV2 1TB NVMe M.2 (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "capacidade_gb": 1000,
+      "interface": "PCIe 4.0 x4 NVMe",
+      "formato": "M.2 2280",
+      "leitura_mb_s": 3500,
+      "gravacao_mb_s": 2100,
+      "garantia_anos": 3
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 14500
+    },
+    "criado_em": {
+      "$date": "2026-10-28T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "GAM-XBX-CTRL",
+    "nome": "Controle Xbox Sem Fio Carbon Black",
+    "marca": "Microsoft",
+    "categorias": [
+      "Games"
+    ],
+    "preco": {
+      "$numberDecimal": "449.00"
+    },
+    "preco_original": null,
+    "estoque": 40,
+    "descricao": "",
+    "tags": [
+      "controle",
+      "xbox"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/1b1b2f/ff9900/png?text=Controle+Xbox+Sem+Fio+Carbon+Black",
+        "alt": "Controle Xbox Sem Fio Carbon Black",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/1b1b2f/ff9900/png?text=Controle+Xbox+Sem+Fio+Carbon+Black+%28detalhe%29",
+        "alt": "Controle Xbox Sem Fio Carbon Black (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "compatibilidade": [
+        "Xbox Series X|S",
+        "Xbox One",
+        "Windows",
+        "Android",
+        "iOS"
+      ],
+      "conexao": [
+        "Xbox Wireless",
+        "Bluetooth",
+        "USB-C"
+      ],
+      "pilhas": "2x AA"
+    },
+    "avaliacao": {
+      "media": 4.8,
+      "total": 11000
+    },
+    "criado_em": {
+      "$date": "2026-10-29T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "GAM-ZELDA-TOTK",
+    "nome": "The Legend of Zelda: Tears of the Kingdom (Switch)",
+    "marca": "Nintendo",
+    "categorias": [
+      "Games"
+    ],
+    "preco": {
+      "$numberDecimal": "299.00"
+    },
+    "preco_original": {
+      "$numberDecimal": "349.00"
+    },
+    "estoque": 25,
+    "descricao": "",
+    "tags": [
+      "jogo",
+      "zelda"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/1b1b2f/ff9900/png?text=The+Legend+of+Zelda%3A+Tears+of+the+Kingdom+%28Switch%29",
+        "alt": "The Legend of Zelda: Tears of the Kingdom (Switch)",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/1b1b2f/ff9900/png?text=The+Legend+of+Zelda%3A+Tears+of+the+Kingdom+%28Switch%29+%28detalhe%29",
+        "alt": "The Legend of Zelda: Tears of the Kingdom (Switch) (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "plataforma": "Nintendo Switch",
+      "midia": "Física",
+      "genero": [
+        "Aventura",
+        "Ação"
+      ],
+      "classificacao": "10 anos",
+      "idiomas": [
+        "Português",
+        "Inglês"
+      ],
+      "jogadores": 1
+    },
+    "avaliacao": {
+      "media": 4.9,
+      "total": 9500
+    },
+    "criado_em": {
+      "$date": "2026-10-30T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "LIV-PY-FLU",
+    "nome": "Python Fluente — 2ª Edição",
+    "marca": "Novatec",
+    "categorias": [
+      "Livros",
+      "Tecnologia"
+    ],
+    "preco": {
+      "$numberDecimal": "179.00"
+    },
+    "preco_original": null,
+    "estoque": 30,
+    "descricao": "",
+    "tags": [
+      "python",
+      "programacao"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=Python+Fluente+%E2%80%94+2%C2%AA+Edi%C3%A7%C3%A3o",
+        "alt": "Python Fluente — 2ª Edição",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=Python+Fluente+%E2%80%94+2%C2%AA+Edi%C3%A7%C3%A3o+%28detalhe%29",
+        "alt": "Python Fluente — 2ª Edição (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "autor": "Luciano Ramalho",
+      "editora": "Novatec",
+      "isbn": "978-8575228425",
+      "paginas": 1008,
+      "idioma": "Português",
+      "formato": "Capa comum",
+      "edicao": 2
+    },
+    "avaliacao": {
+      "media": 4.9,
+      "total": 2600
+    },
+    "criado_em": {
+      "$date": "2026-10-31T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "LIV-MONGO-DEF",
+    "nome": "MongoDB: The Definitive Guide",
+    "marca": "O'Reilly",
+    "categorias": [
+      "Livros",
+      "Tecnologia"
+    ],
+    "preco": {
+      "$numberDecimal": "289.00"
+    },
+    "preco_original": null,
+    "estoque": 10,
+    "descricao": "",
+    "tags": [
+      "mongodb",
+      "nosql",
+      "banco de dados"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=MongoDB%3A+The+Definitive+Guide",
+        "alt": "MongoDB: The Definitive Guide",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=MongoDB%3A+The+Definitive+Guide+%28detalhe%29",
+        "alt": "MongoDB: The Definitive Guide (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "autor": [
+        "Shannon Bradshaw",
+        "Eoin Brazil",
+        "Kristina Chodorow"
+      ],
+      "editora": "O'Reilly Media",
+      "isbn": "978-1491954461",
+      "paginas": 514,
+      "idioma": "Inglês",
+      "edicao": 3
+    },
+    "avaliacao": {
+      "media": 4.6,
+      "total": 800
+    },
+    "criado_em": {
+      "$date": "2026-11-01T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "LIV-1984",
+    "nome": "1984",
+    "marca": "Companhia das Letras",
+    "categorias": [
+      "Livros",
+      "Ficção"
+    ],
+    "preco": {
+      "$numberDecimal": "39.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "59.90"
+    },
+    "estoque": 90,
+    "descricao": "",
+    "tags": [
+      "classico",
+      "distopia"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=1984",
+        "alt": "1984",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/f3e9d2/333333/png?text=1984+%28detalhe%29",
+        "alt": "1984 (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "autor": "George Orwell",
+      "tradutor": "Alexandre Hubner e Heloisa Jahn",
+      "editora": "Companhia das Letras",
+      "paginas": 416,
+      "idioma": "Português",
+      "formato": "Capa comum"
+    },
+    "avaliacao": {
+      "media": 4.9,
+      "total": 41000
+    },
+    "criado_em": {
+      "$date": "2026-11-02T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "MOD-JAQ-JEANS",
+    "nome": "Jaqueta Jeans Feminina Oversized",
+    "marca": "Levi's",
+    "categorias": [
+      "Moda",
+      "Feminino"
+    ],
+    "preco": {
+      "$numberDecimal": "399.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "549.90"
+    },
+    "estoque": 20,
+    "descricao": "",
+    "tags": [
+      "jaqueta",
+      "jeans"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/fde2e4/333333/png?text=Jaqueta+Jeans+Feminina+Oversized",
+        "alt": "Jaqueta Jeans Feminina Oversized",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/fde2e4/333333/png?text=Jaqueta+Jeans+Feminina+Oversized+%28detalhe%29",
+        "alt": "Jaqueta Jeans Feminina Oversized (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "tamanhos": [
+        "PP",
+        "P",
+        "M",
+        "G"
+      ],
+      "cores": [
+        "Azul claro",
+        "Azul escuro"
+      ],
+      "material": {
+        "algodao_pct": 99,
+        "elastano_pct": 1
+      },
+      "modelagem": "Oversized"
+    },
+    "avaliacao": {
+      "media": 4.5,
+      "total": 650
+    },
+    "criado_em": {
+      "$date": "2026-11-03T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "MOD-MOC-SAM",
+    "nome": "Mochila Samsonite Executiva para Notebook 15.6\"",
+    "marca": "Samsonite",
+    "categorias": [
+      "Moda",
+      "Acessórios"
+    ],
+    "preco": {
+      "$numberDecimal": "599.00"
+    },
+    "preco_original": null,
+    "estoque": 14,
+    "descricao": "",
+    "tags": [
+      "mochila",
+      "notebook"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/fde2e4/333333/png?text=Mochila+Samsonite+Executiva+para+Notebook+15.6%22",
+        "alt": "Mochila Samsonite Executiva para Notebook 15.6\"",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/fde2e4/333333/png?text=Mochila+Samsonite+Executiva+para+Notebook+15.6%22+%28detalhe%29",
+        "alt": "Mochila Samsonite Executiva para Notebook 15.6\" (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "capacidade_l": 22,
+      "compartimento_notebook_pol": 15.6,
+      "material": "Poliéster",
+      "impermeavel": true,
+      "bolsos": 6,
+      "cor": "Preto"
+    },
+    "avaliacao": {
+      "media": 4.7,
+      "total": 1900
+    },
+    "criado_em": {
+      "$date": "2026-11-04T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "CAS-LIQ-OST",
+    "nome": "Liquidificador Oster 1400W 3,2L",
+    "marca": "Oster",
+    "categorias": [
+      "Casa e Cozinha",
+      "Eletroportáteis"
+    ],
+    "preco": {
+      "$numberDecimal": "229.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "299.90"
+    },
+    "estoque": 33,
+    "descricao": "",
+    "tags": [
+      "liquidificador"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Liquidificador+Oster+1400W+3%2C2L",
+        "alt": "Liquidificador Oster 1400W 3,2L",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Liquidificador+Oster+1400W+3%2C2L+%28detalhe%29",
+        "alt": "Liquidificador Oster 1400W 3,2L (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "potencia_w": 1400,
+      "capacidade_l": 3.2,
+      "velocidades": 12,
+      "voltagem": [
+        "127V",
+        "220V"
+      ],
+      "jarra": "Vidro",
+      "lamina": "Aço inox 6 pontas"
+    },
+    "avaliacao": {
+      "media": 4.5,
+      "total": 5200
+    },
+    "criado_em": {
+      "$date": "2026-11-05T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  },
+  {
+    "sku": "CAS-PAN-TRA",
+    "nome": "Jogo de Panelas Tramontina Antiaderente 5 peças",
+    "marca": "Tramontina",
+    "categorias": [
+      "Casa e Cozinha"
+    ],
+    "preco": {
+      "$numberDecimal": "349.90"
+    },
+    "preco_original": {
+      "$numberDecimal": "459.90"
+    },
+    "estoque": 27,
+    "descricao": "",
+    "tags": [
+      "panelas",
+      "cozinha"
+    ],
+    "imagens": [
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Jogo+de+Panelas+Tramontina+Antiaderente+5+pe%C3%A7as",
+        "alt": "Jogo de Panelas Tramontina Antiaderente 5 peças",
+        "principal": true
+      },
+      {
+        "url": "https://placehold.co/600x600/e3f2fd/333333/png?text=Jogo+de+Panelas+Tramontina+Antiaderente+5+pe%C3%A7as+%28detalhe%29",
+        "alt": "Jogo de Panelas Tramontina Antiaderente 5 peças (detalhe)",
+        "principal": false
+      }
+    ],
+    "especificacoes": {
+      "pecas": [
+        "Caçarola 20cm",
+        "Caçarola 24cm",
+        "Panela 18cm",
+        "Frigideira 24cm",
+        "Leiteira 16cm"
+      ],
+      "revestimento": "Starflon Max",
+      "cooktop_inducao": false,
+      "cor": "Vermelho"
+    },
+    "avaliacao": {
+      "media": 4.7,
+      "total": 8700
+    },
+    "criado_em": {
+      "$date": "2026-11-06T21:44:03.598Z"
+    },
+    "moeda": "BRL",
+    "ativo": true,
+    "atualizado_em": {
+      "$date": "2026-11-07T21:44:03.598Z"
+    }
+  }
+]
