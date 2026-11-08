@@ -1,7 +1,7 @@
 # PB Store — E-commerce inspirado na Amazon
 
 Python + **Streamlit** (telas) + **MongoDB** (catálogo flexível e pedidos).
-Camada de cache **Redis preparada** (interface e pontos de uso prontos), ainda não implementada.
+Cache **Redis** nas consultas do catálogo (com fallback automático para o MongoDB).
 
 ## Como rodar (Windows / PowerShell)
 
@@ -43,7 +43,7 @@ Para inspecionar o banco pelo navegador: `docker compose --profile admin up -d m
 
 | Tela | Arquivo | O que faz |
 |---|---|---|
-| Catálogo e busca | `app.py` | Busca textual (índice `$text` em português com pesos) + filtros por categoria, marca, preço e avaliação; ordenação e paginação via `$facet`; detalhes do produto com especificações JSON |
+| Catálogo e busca | `views/catalogo.py` | Busca textual (índice `$text` em português com pesos) + filtros por categoria, marca, preço e avaliação; ordenação e paginação via `$facet`; detalhes do produto com especificações JSON |
 | Carrinho | `pages/1_Carrinho.py` | Quantidades, cupom (`PB10`, `BEMVINDO`), frete grátis acima de R$ 199, checkout que grava o pedido |
 | Meus pedidos | `pages/2_Pedidos.py` | Histórico do comprador, resumo agregado (total gasto, ticket médio), itens, valores e linha do tempo de status |
 | Cadastrar produto | `pages/3_Cadastrar_Produto.py` | Formulário com especificações em JSON livre (modelos por tipo de produto) |
@@ -51,18 +51,19 @@ Para inspecionar o banco pelo navegador: `docker compose --profile admin up -d m
 ## Estrutura
 
 ```
-app.py                     tela inicial (catálogo + busca)
+app.py                     ponto de entrada e menu lateral (st.navigation)
+views/catalogo.py          tela do catálogo + busca
 pages/                     demais telas do Streamlit
 src/
   config.py                variáveis de ambiente (.env)
   db.py                    conexão, validadores $jsonSchema e índices
-  cache.py                 camada de cache (NullCache hoje, RedisCache a implementar)
+  cache.py                 camada de cache (RedisCache + NullCache de fallback)
   utils.py                 dinheiro em Decimal128, datas, formatação
   ui.py                    componentes visuais compartilhados
   repositories/            acesso às coleções (produtos, clientes, pedidos)
   services/                regras usadas pelas telas + pontos de cache/invalidação
 scripts/seed.py            dados de exemplo
-docker-compose.yml         mongo (+ mongo-express e redis em profiles opcionais)
+docker-compose.yml         mongo + redis (mongo-express em profile opcional)
 ```
 
 ## Modelagem no MongoDB
@@ -131,20 +132,20 @@ E-mail único, criado automaticamente na primeira compra (upsert), com `estatist
 * **Preço vem sempre do banco** no checkout, nunca da tela.
 * **Estoque baixado de forma atômica** (`update_one` com `estoque >= qtd`); se algo falhar, o estoque reservado é devolvido. Com MongoDB em replica set, dá para trocar por uma transação multi-documento.
 
-## Cache Redis (preparado)
+## Cache Redis
 
-Já está pronto:
+Cache-aside nas consultas do catálogo (busca, facetas e produto):
 
-* `src/cache.py`: interface `CacheBackend`, `NullCache` (ativo), `RedisCache` (esqueleto com exemplo comentado), decorator `@cached` e `invalidar()`.
-* `src/services/catalogo.py`: busca, facetas e produto já passam por `@cached`; cadastro de produto invalida `catalogo:*`.
+* `src/cache.py`: `CacheBackend`, `RedisCache` (TTL, serialização BSON, circuit breaker), `NullCache` (fallback), decorator `@cached` e `invalidar()`.
+* `src/services/catalogo.py`: busca (TTL 120s), facetas (600s) e produto (300s) passam por `@cached`; o texto da busca é normalizado para aumentar o hit rate. Cadastrar produto invalida `catalogo:*`.
 * `src/services/checkout.py`: criar/cancelar pedido invalida o catálogo (estoque mudou).
-* `docker-compose.yml`: serviço `redis` no profile `cache`.
+* Se o Redis estiver fora, a aplicação continua consultando o MongoDB e tenta reconectar sozinha a cada 30s.
+* A tela de catálogo mostra se o resultado veio do cache (⚡) ou do MongoDB (🍃).
 
-Para ativar depois:
+Para usar:
 
-1. `pip install redis` (descomentar no `requirements.txt`)
-2. Implementar os 4 métodos de `RedisCache` em `src/cache.py`
-3. `.env`: `CACHE_BACKEND=redis`
-4. `docker compose --profile cache up -d redis`
+1. `pip install -r requirements.txt`
+2. `docker compose up -d redis` (ou `brew install redis && redis-server`)
+3. `.env`: `CACHE_BACKEND=redis` (já é o padrão) e `REDIS_URL=redis://localhost:6379/0`
 
-Nenhuma tela precisa mudar.
+Para desligar: `CACHE_BACKEND=none`.

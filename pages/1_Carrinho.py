@@ -24,7 +24,7 @@ if numero := st.session_state.pop("ultimo_pedido", None):
 itens_carrinho = carrinho()
 if not itens_carrinho:
     st.info("Seu carrinho está vazio.")
-    st.page_link("app.py", label="Continuar comprando", icon="🛍️")
+    st.page_link("views/catalogo.py", label="Continuar comprando", icon="🛍️")
     st.stop()
 
 produtos = catalogo.obter_produtos(list(itens_carrinho))

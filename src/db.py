@@ -13,7 +13,7 @@ Modelagem
 """
 from functools import lru_cache
 
-from pymongo import ASCENDING, DESCENDING, TEXT, MongoClient
+from pymongo import (ASCENDING, DESCENDING, TEXT, MongoClient)
 from pymongo.database import Database
 
 from .config import settings

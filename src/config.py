@@ -16,8 +16,8 @@ class Settings:
     mongo_uri: str = os.getenv("MONGO_URI", "mongodb://localhost:27017")
     mongo_db: str = os.getenv("MONGO_DB", "amazon_pb")
 
-    # Cache (Redis) — preparado, mas desligado por padrão ("none")
-    cache_backend: str = os.getenv("CACHE_BACKEND", "none").lower()
+    # Cache (Redis) — "redis" (padrão; se o Redis estiver fora, segue sem cache) ou "none"
+    cache_backend: str = os.getenv("CACHE_BACKEND", "redis").lower()
     redis_url: str = os.getenv("REDIS_URL", "redis://localhost:6379/0")
     cache_ttl_padrao: int = int(os.getenv("CACHE_TTL", "300"))  # segundos
 

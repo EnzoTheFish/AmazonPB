@@ -1,19 +1,20 @@
-"""Camada de cache — PREPARADA para Redis, ainda NÃO implementada.
+"""Camada de cache — Redis (cache-aside) com degradação segura.
 
-Como está hoje
---------------
-* `get_cache()` devolve um `NullCache` (não guarda nada), então toda leitura
-  vai direto ao MongoDB. A aplicação funciona normalmente sem Redis.
-* As consultas de catálogo já passam pelo decorator `@cached(...)` e as
-  escritas já chamam `invalidar(...)`. Ou seja: os pontos de leitura,
-  gravação e invalidação já estão no lugar certo.
+Como funciona
+-------------
+* `get_cache()` devolve um `RedisCache` quando `CACHE_BACKEND=redis` e o Redis
+  responde; caso contrário devolve um `NullCache` e tudo vai direto ao MongoDB.
+  A aplicação nunca cai por causa do cache.
+* As consultas de catálogo passam pelo decorator `@cached(...)` e as escritas
+  (cadastro de produto, pedido, cancelamento) chamam `invalidar(...)`.
+* Se o Redis cair em execução, um "circuit breaker" desativa o cache por alguns
+  segundos (evita esperar timeout a cada consulta) e volta a tentar depois.
 
-Para ativar o Redis no futuro
------------------------------
-1. `pip install redis`  (e descomentar no requirements.txt)
-2. Implementar os métodos de `RedisCache` (há um exemplo comentado abaixo).
-3. No .env: `CACHE_BACKEND=redis` e `REDIS_URL=redis://localhost:6379/0`
-4. `docker compose --profile cache up -d redis`
+Ativar
+------
+1. `pip install -r requirements.txt`
+2. No .env: `CACHE_BACKEND=redis` e `REDIS_URL=redis://localhost:6379/0`
+3. `docker compose up -d redis`
 
 Convenção de chaves
 -------------------
@@ -28,8 +29,10 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import threading
+import time
 from abc import ABC, abstractmethod
-from functools import lru_cache, wraps
+from functools import wraps
 from typing import Any, Callable
 
 from bson import json_util
@@ -49,6 +52,15 @@ def serializar(valor: Any) -> str:
 
 def desserializar(texto: str | bytes) -> Any:
     return json_util.loads(texto)
+
+
+_estado = threading.local()
+
+
+def origem_ultima_consulta() -> str | None:
+    """"cache" ou "mongodb" para a última consulta cacheada feita nesta thread
+    (cada sessão do Streamlit roda na sua thread). Útil para exibir na tela."""
+    return getattr(_estado, "origem", None)
 
 
 def gerar_chave(prefixo: str, *args: Any, **kwargs: Any) -> str:
@@ -92,55 +104,91 @@ class NullCache(CacheBackend):
 
 
 class RedisCache(CacheBackend):
-    """Backend Redis — TODO: implementar quando o cache entrar no escopo.
+    """Backend Redis (redis-py >= 5). Valores serializados com `bson.json_util`."""
 
-    Exemplo de implementação (redis-py >= 5):
-
-        import redis
-
-        def __init__(self, url: str):
-            self.r = redis.Redis.from_url(url, socket_timeout=1)
-            self.r.ping()
-
-        def get(self, chave):
-            bruto = self.r.get(chave)
-            return desserializar(bruto) if bruto is not None else None
-
-        def set(self, chave, valor, ttl=None):
-            self.r.set(chave, serializar(valor), ex=ttl or settings.cache_ttl_padrao)
-
-        def delete(self, chave):
-            self.r.delete(chave)
-
-        def invalidar(self, prefixo):
-            for k in self.r.scan_iter(match=f"{prefixo}:*", count=500):
-                self.r.delete(k)
-    """
+    PAUSA_APOS_FALHA = 15  # segundos sem tentar o Redis após um erro (circuit breaker)
 
     def __init__(self, url: str):
-        raise NotImplementedError("RedisCache ainda não foi implementado (fora do escopo atual).")
+        import redis  # import tardio: só é exigido quando o backend redis é usado
 
-    def get(self, chave: str) -> Any | None:  # pragma: no cover
-        raise NotImplementedError
+        self._erro = redis.RedisError
+        self.r = redis.Redis.from_url(url, socket_timeout=1, socket_connect_timeout=1)
+        self.r.ping()  # falha cedo => get_cache() cai para NullCache
+        self._pausado_ate = 0.0
 
-    def set(self, chave: str, valor: Any, ttl: int | None = None) -> None:  # pragma: no cover
-        raise NotImplementedError
+    # -- circuit breaker ---------------------------------------------------- #
+    def _disponivel(self) -> bool:
+        return time.monotonic() >= self._pausado_ate
 
-    def delete(self, chave: str) -> None:  # pragma: no cover
-        raise NotImplementedError
+    def _falhou(self, exc: Exception) -> None:
+        self._pausado_ate = time.monotonic() + self.PAUSA_APOS_FALHA
+        log.warning("Redis indisponível (%s). Cache pausado por %ss.", exc, self.PAUSA_APOS_FALHA)
 
-    def invalidar(self, prefixo: str) -> None:  # pragma: no cover
-        raise NotImplementedError
-
-
-@lru_cache(maxsize=1)
-def get_cache() -> CacheBackend:
-    if settings.cache_backend == "redis":
+    # -- contrato ----------------------------------------------------------- #
+    def get(self, chave: str) -> Any | None:
+        if not self._disponivel():
+            return None
         try:
-            return RedisCache(settings.redis_url)
-        except Exception as exc:  # NotImplementedError hoje; falha de conexão amanhã
-            log.warning("Cache Redis indisponível (%s). Usando NullCache.", exc)
-    return NullCache()
+            bruto = self.r.get(chave)
+        except self._erro as exc:
+            self._falhou(exc)
+            return None
+        return desserializar(bruto) if bruto is not None else None
+
+    def set(self, chave: str, valor: Any, ttl: int | None = None) -> None:
+        if not self._disponivel():
+            return
+        try:
+            self.r.set(chave, serializar(valor), ex=ttl or settings.cache_ttl_padrao)
+        except self._erro as exc:
+            self._falhou(exc)
+
+    def delete(self, chave: str) -> None:
+        if not self._disponivel():
+            return
+        try:
+            self.r.delete(chave)
+        except self._erro as exc:
+            self._falhou(exc)
+
+    def invalidar(self, prefixo: str) -> None:
+        if not self._disponivel():
+            return
+        try:
+            chaves = list(self.r.scan_iter(match=f"{prefixo}:*", count=500))
+            if chaves:
+                self.r.delete(*chaves)
+        except self._erro as exc:
+            self._falhou(exc)
+
+
+_cache: CacheBackend | None = None
+_proxima_tentativa = 0.0
+_lock = threading.Lock()
+RETENTATIVA_REDIS = 30  # segundos entre tentativas de conexão quando o Redis está fora
+
+
+def get_cache() -> CacheBackend:
+    """Singleton do backend. Se o Redis estava fora na partida, tenta de novo
+    a cada `RETENTATIVA_REDIS` segundos (sem precisar reiniciar a aplicação)."""
+    global _cache, _proxima_tentativa
+    if _cache is not None and not isinstance(_cache, NullCache):
+        return _cache
+    if settings.cache_backend != "redis":
+        _cache = _cache or NullCache()
+        return _cache
+    with _lock:
+        if isinstance(_cache, RedisCache):
+            return _cache
+        if _cache is None or time.monotonic() >= _proxima_tentativa:
+            try:
+                _cache = RedisCache(settings.redis_url)
+                log.info("Cache Redis conectado em %s", settings.redis_url)
+            except Exception as exc:
+                log.warning("Cache Redis indisponível (%s). Usando NullCache.", exc)
+                _cache = NullCache()
+                _proxima_tentativa = time.monotonic() + RETENTATIVA_REDIS
+        return _cache
 
 
 # --------------------------------------------------------------------------- #
@@ -161,11 +209,13 @@ def cached(prefixo: str, ttl: int | None = None) -> Callable:
             try:
                 hit = cache.get(chave)
                 if hit is not None:
+                    _estado.origem = "cache"
                     return hit
             except Exception as exc:  # o cache nunca pode derrubar a aplicação
                 log.warning("Falha ao ler cache %s: %s", chave, exc)
 
             resultado = fn(*args, **kwargs)
+            _estado.origem = "mongodb"
 
             try:
                 cache.set(chave, resultado, ttl or settings.cache_ttl_padrao)

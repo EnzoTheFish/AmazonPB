@@ -20,12 +20,10 @@ services:
       ME_CONFIG_BASICAUTH: "false"
     depends_on: [mongo]
 
-  # Cache — PREPARADO para o futuro, não sobe por padrão.
-  # Subir com: docker compose --profile cache up -d redis
+  # Cache das consultas do catálogo. Subir com: docker compose up -d redis
   redis:
     image: redis:7-alpine
     container_name: amazon_pb_redis
-    profiles: ["cache"]
     ports:
       - "6379:6379"
     command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru"]

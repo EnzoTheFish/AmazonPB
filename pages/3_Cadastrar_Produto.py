@@ -109,4 +109,4 @@ if salvar:
         st.json(exc.details or {}, expanded=False)
     else:
         st.success(f"Produto cadastrado! _id: `{novo_id}`")
-        st.page_link("app.py", label="Ver no catálogo", icon="🛍️")
+        st.page_link("views/catalogo.py", label="Ver no catálogo", icon="🛍️")

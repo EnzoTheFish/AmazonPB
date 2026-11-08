@@ -1,4 +1,4 @@
-"""Serviço de catálogo — leituras passam pelo cache (hoje NullCache, amanhã Redis)."""
+"""Serviço de catálogo — leituras passam pelo cache (Redis, com fallback para o MongoDB)."""
 from __future__ import annotations
 
 from typing import Any
@@ -10,9 +10,20 @@ PREFIXO = "catalogo"
 
 
 @cached(f"{PREFIXO}:busca", ttl=120)
-def buscar_produtos(**filtros: Any) -> dict:
-    """Ver `produtos_repo.buscar` para os filtros aceitos."""
+def _buscar_produtos(**filtros: Any) -> dict:
     return produtos_repo.buscar(**filtros)
+
+
+def buscar_produtos(**filtros: Any) -> dict:
+    """Ver `produtos_repo.buscar` para os filtros aceitos.
+
+    O texto é normalizado (espaços e caixa) antes de virar chave de cache:
+    "  Notebook " e "notebook" são a mesma consulta (o $text e o regex do
+    MongoDB já ignoram maiúsculas/minúsculas).
+    """
+    if "texto" in filtros:
+        filtros["texto"] = " ".join((filtros["texto"] or "").lower().split())
+    return _buscar_produtos(**filtros)
 
 
 @cached(f"{PREFIXO}:facetas", ttl=600)
