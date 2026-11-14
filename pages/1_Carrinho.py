@@ -4,6 +4,7 @@ import re
 
 import streamlit as st
 
+from src import carrinho_redis
 from src.repositories.pedidos import (CUPONS, FRETE_GRATIS_ACIMA, EstoqueInsuficiente,
                                       PedidoInvalido, calcular_valores)
 from src.services import catalogo, checkout
@@ -27,6 +28,9 @@ if not itens_carrinho:
     st.page_link("views/catalogo.py", label="Continuar comprando", icon="🛍️")
     st.stop()
 
+if (ttl := carrinho_redis.ttl_restante()) > 0:
+    st.caption(f"⏳ Carrinho guardado no Redis · expira em {ttl // 60} min sem alterações")
+
 produtos = catalogo.obter_produtos(list(itens_carrinho))
 
 col_itens, col_resumo = st.columns([3, 1.3], gap="large")
@@ -49,6 +53,8 @@ with col_itens:
             c_info.markdown(f"**{p['nome']}**  \n{p['marca']} · {fmt_brl(p['preco'])} cada")
             nova_qtd = c_qtd.number_input("Qtd", min_value=1, max_value=estoque,
                                           value=min(qtd, estoque), key=f"qtd_{pid}")
+            if int(nova_qtd) != qtd:  # só grava no Redis quando a quantidade mudou
+                carrinho_redis.definir(pid, int(nova_qtd))
             itens_carrinho[pid] = int(nova_qtd)
             c_sub.markdown(f"**{fmt_brl(dinheiro(p['preco']) * int(nova_qtd))}**")
             if c_rm.button("🗑️", key=f"rm_{pid}", help="Remover"):
@@ -118,7 +124,7 @@ if enviar:
         except (EstoqueInsuficiente, PedidoInvalido) as exc:
             st.error(str(exc))
         else:
-            st.session_state["carrinho"] = {}
+            carrinho_redis.limpar()  # pedido gravado no MongoDB => limpa o carrinho no Redis
             st.session_state["email_cliente"] = email.strip().lower()
             st.session_state["ultimo_pedido"] = pedido["numero"]
             st.rerun()
