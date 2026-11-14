@@ -8,6 +8,7 @@ import pandas as pd
 import streamlit as st
 from bson import json_util
 
+from . import carrinho_redis
 from .db import init_db, ping
 from .utils import achatar, dinheiro, fmt_brl
 
@@ -60,6 +61,12 @@ def configurar_pagina(titulo: str, icone: str) -> None:
         st.code("docker compose up -d mongo", language="bash")
         st.markdown("ou ajuste `MONGO_URI` no arquivo `.env`.")
         st.stop()
+    if not carrinho_redis.disponivel():  # o carrinho ativo vive no Redis
+        st.error("Não foi possível conectar ao Redis (carrinho).")
+        st.markdown("Suba o Redis com:")
+        st.code("docker compose up -d redis", language="bash")
+        st.markdown("ou ajuste `REDIS_URL` no arquivo `.env`.")
+        st.stop()
     _resumo_carrinho_sidebar()
 
 
@@ -72,20 +79,22 @@ def cabecalho(titulo: str = "PB Store", subtitulo: str = "") -> None:
 
 
 # --------------------------------------------------------------------------- #
-# Carrinho (session_state)
+# Carrinho (Redis — ver src/carrinho_redis.py)
 # --------------------------------------------------------------------------- #
 def carrinho() -> dict[str, int]:
-    return st.session_state.setdefault("carrinho", {})
+    """Cópia do carrinho guardado no Redis. Para alterar, use as funções abaixo."""
+    return carrinho_redis.obter()
 
 
 def adicionar_ao_carrinho(produto: dict, quantidade: int = 1) -> None:
-    c = carrinho()
     pid = str(produto["_id"])
-    c[pid] = min(c.get(pid, 0) + quantidade, max(int(produto.get("estoque", 0)), 0))
+    estoque = max(int(produto.get("estoque", 0)), 0)
+    atual = carrinho_redis.obter().get(pid, 0)
+    carrinho_redis.definir(pid, min(atual + quantidade, estoque))
 
 
 def remover_do_carrinho(produto_id: str) -> None:
-    carrinho().pop(produto_id, None)
+    carrinho_redis.remover(produto_id)
 
 
 def total_itens_carrinho() -> int:

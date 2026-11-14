@@ -21,5 +21,8 @@ class Settings:
     redis_url: str = os.getenv("REDIS_URL", "redis://localhost:6379/0")
     cache_ttl_padrao: int = int(os.getenv("CACHE_TTL", "300"))  # segundos
 
+    # Carrinho ativo (Redis) — tempo até um carrinho sem alterações expirar
+    carrinho_ttl: int = int(os.getenv("CARRINHO_TTL", "7200"))  # segundos (2 horas)
+
 
 settings = Settings()
