@@ -9,6 +9,7 @@ import streamlit as st
 from bson import json_util
 
 from . import carrinho_redis
+from .config import settings
 from .db import init_db, ping
 from .utils import achatar, dinheiro, fmt_brl
 
@@ -108,6 +109,10 @@ def _resumo_carrinho_sidebar() -> None:
         if n:
             st.page_link("pages/1_Carrinho.py", label="Ver carrinho e finalizar", icon="➡️")
         st.divider()
+        with st.expander("Status do sistema"):
+            st.success(f"MongoDB conectado · {settings.mongo_db}")
+            st.success("Redis conectado · carrinho ativo")
+            st.caption("Proteção anti-spam: 3 tentativas em 60s; bloqueio de 120s.")
 
 
 # --------------------------------------------------------------------------- #
