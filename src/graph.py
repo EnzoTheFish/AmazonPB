@@ -219,6 +219,26 @@ def registrar_pedido(pedido: dict) -> None:
     ], somar=True)
 
 
+def desfazer_pedido(pedido: dict) -> None:
+    """Tira do grafo as compras de um pedido cancelado (subtrai a quantidade).
+
+    Se a quantidade chegar a zero, o relacionamento [:COMPROU] é removido.
+    """
+    email = pedido["cliente"]["email"]
+    executar(
+        """
+        UNWIND $itens AS item
+        MATCH (:Cliente {email: $email})-[r:COMPROU]->(:Produto {produto_id: item.produto_id})
+        SET r.quantidade = r.quantidade - item.quantidade
+        WITH r WHERE r.quantidade <= 0
+        DELETE r
+        """,
+        email=email,
+        itens=[{"produto_id": str(i["produto_id"]), "quantidade": int(i["quantidade"])}
+               for i in pedido["itens"]],
+    )
+
+
 def registrar_avaliacao(email: str, produto_id: str, nota: int) -> None:
     if not 1 <= int(nota) <= 5:
         raise ValueError("A nota deve estar entre 1 e 5.")

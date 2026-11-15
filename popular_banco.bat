@@ -6,14 +6,14 @@ echo.
 
 REM ---------- 1. Python + dependencias ----------
 if not exist ".venv\Scripts\python.exe" (
-    echo [1/3] Criando ambiente virtual...
+    echo [1/4] Criando ambiente virtual...
     python -m venv .venv || goto erro_python
 )
-echo [1/3] Verificando dependencias (na primeira vez demora alguns minutos)...
+echo [1/4] Verificando dependencias (na primeira vez demora alguns minutos)...
 ".venv\Scripts\python.exe" -m pip install --disable-pip-version-check -q -r requirements.txt || goto erro_pip
 
 REM ---------- 2. Servidor MongoDB ----------
-echo [2/3] Verificando o servidor MongoDB...
+echo [2/4] Verificando o servidor MongoDB...
 sc query MongoDB >nul 2>nul
 if not errorlevel 1 (
     sc query MongoDB | find "RUNNING" >nul || (
@@ -25,12 +25,18 @@ docker info >nul 2>nul
 if not errorlevel 1 (
     echo       Docker aberto: subindo container do MongoDB...
     docker compose up -d mongo >nul
+    echo       Subindo Redis e Neo4j...
+    docker compose up -d redis neo4j >nul
 )
 ".venv\Scripts\python.exe" -m scripts.checar_mongo || goto erro_mongo
 
 REM ---------- 3. Seed ----------
-echo [3/3] Populando o banco...
+echo [3/4] Populando o banco...
 ".venv\Scripts\python.exe" -m scripts.seed --reset || goto erro_seed
+
+echo [4/4] Carregando o grafo de recomendacoes no Neo4j (aguarda ate ~30s na 1a vez)...
+timeout /t 20 /nobreak >nul
+".venv\Scripts\python.exe" -m scripts.seed_neo4j --reset || goto erro_neo4j
 
 echo.
 set /p ABRIR=Abrir o Streamlit agora? (S/N): 
@@ -60,6 +66,14 @@ goto fim
 :erro_seed
 echo.
 echo ERRO ao popular o banco. Veja a mensagem acima.
+goto fim
+
+:erro_neo4j
+echo.
+echo ERRO ao carregar o Neo4j. Abra o Docker Desktop, rode "docker compose up -d neo4j",
+echo espere ~30s e rode: python -m scripts.seed_neo4j --reset
+echo (ou configure NEO4J_* no .env para usar o AuraDB). O resto da loja funciona sem ele.
+goto fim
 
 :fim
 echo.

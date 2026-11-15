@@ -14,5 +14,6 @@ pagina = st.navigation([
     st.Page("pages/1_Carrinho.py", title="Carrinho"),
     st.Page("pages/2_Pedidos.py", title="Pedidos"),
     st.Page("pages/3_Cadastrar_Produto.py", title="Cadastrar Produto"),
+    st.Page("pages/4_Recomendacoes.py", title="Recomendações"),
 ])
 pagina.run()

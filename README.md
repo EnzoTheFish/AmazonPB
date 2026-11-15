@@ -1,7 +1,7 @@
 # PB Store — E-commerce inspirado na Amazon
 
 Python + **Streamlit** (telas) + **MongoDB** (catálogo flexível e pedidos).
-Cache **Redis** nas consultas do catálogo (com fallback automático para o MongoDB).
+Cache/carrinho **Redis** e grafo de recomendações **Neo4j**.
 
 ## Como rodar (Windows / PowerShell)
 
@@ -27,7 +27,11 @@ docker compose up -d mongo
 # 4. Dados de exemplo (36 produtos, 3 clientes e pedidos com histórico)
 python -m scripts.seed --reset
 
-# 5. Aplicação
+# 5. Grafo de recomendações (Neo4j)
+docker compose up -d neo4j        # espere ~30s na primeira vez
+python -m scripts.seed_neo4j --reset
+
+# 6. Aplicação
 streamlit run app.py
 ```
 
@@ -47,6 +51,7 @@ Para inspecionar o banco pelo navegador: `docker compose --profile admin up -d m
 | Carrinho | `pages/1_Carrinho.py` | Quantidades, cupom (`PB10`, `BEMVINDO`), frete grátis acima de R$ 199, checkout que grava o pedido |
 | Meus pedidos | `pages/2_Pedidos.py` | Histórico do comprador, resumo agregado (total gasto, ticket médio), itens, valores e linha do tempo de status |
 | Cadastrar produto | `pages/3_Cadastrar_Produto.py` | Formulário com especificações em JSON livre (modelos por tipo de produto) |
+| Recomendações | `pages/4_Recomendacoes.py` | Recomendações por filtragem colaborativa no Neo4j ("quem comprou o mesmo também comprou" e "quem avaliou parecido também gostou"); dados do produto vêm do MongoDB; avaliação 1–5★ grava `[:AVALIOU]`; mostra a consulta Cypher |
 
 ## Estrutura
 
@@ -55,6 +60,7 @@ app.py                     ponto de entrada e menu lateral (st.navigation)
 views/catalogo.py          tela do catálogo + busca
 pages/                     demais telas do Streamlit
 src/
+  graph.py                 Neo4j: modelo, carga, recomendações (Cypher)
   config.py                variáveis de ambiente (.env)
   db.py                    conexão, validadores $jsonSchema e índices
   cache.py                 camada de cache (RedisCache + NullCache de fallback)
@@ -62,8 +68,9 @@ src/
   ui.py                    componentes visuais compartilhados
   repositories/            acesso às coleções (produtos, clientes, pedidos)
   services/                regras usadas pelas telas + pontos de cache/invalidação
-scripts/seed.py            dados de exemplo
-docker-compose.yml         mongo + redis (mongo-express em profile opcional)
+scripts/seed.py            dados de exemplo (MongoDB)
+scripts/seed_neo4j.py      carga do grafo (Neo4j) a partir do MongoDB
+docker-compose.yml         mongo + redis + neo4j (mongo-express em profile opcional)
 ```
 
 ## Modelagem no MongoDB
@@ -149,3 +156,12 @@ Para usar:
 3. `.env`: `CACHE_BACKEND=redis` (já é o padrão) e `REDIS_URL=redis://localhost:6379/0`
 
 Para desligar: `CACHE_BACKEND=none`.
+
+## Grafo de recomendações (Neo4j)
+
+`(:Cliente)-[:COMPROU]->(:Produto)`, `(:Cliente)-[:AVALIOU {nota}]->(:Produto)`, `(:Produto)-[:PERTENCE_A]->(:Categoria)`.
+O `produto_id` do nó é o `_id` do MongoDB: o Neo4j escolhe **quais** produtos recomendar e o MongoDB entrega preço, imagem e estoque.
+
+* Checkout grava as compras no grafo; cancelar o pedido desfaz (se o Neo4j estiver fora, a compra continua normalmente).
+* `.env`: `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`, `NEO4J_DATABASE` (Docker local ou AuraDB).
+* Neo4j: http://localhost:7474 (usuário `neo4j`, senha do `.env`).
