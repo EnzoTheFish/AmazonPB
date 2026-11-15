@@ -7,6 +7,7 @@ import streamlit as st
 from src import carrinho_redis
 from src.repositories.pedidos import (CUPONS, FRETE_GRATIS_ACIMA, EstoqueInsuficiente,
                                       PedidoInvalido, calcular_valores)
+from src import protecao
 from src.services import catalogo, checkout
 from src.ui import carrinho, configurar_pagina, imagem_principal, remover_do_carrinho
 from src.utils import dinheiro, fmt_brl
@@ -111,20 +112,26 @@ if enviar:
         for e in erros:
             st.error(e)
     else:
-        try:
-            pedido = checkout.finalizar_compra(
-                cliente_nome=nome,
-                cliente_email=email,
-                carrinho=dict(itens_carrinho),
-                endereco={"cep": cep.strip(), "logradouro": logradouro.strip(),
-                          "cidade": cidade.strip(), "uf": uf},
-                metodo_pagamento=metodo,
-                cupom=cupom,
-            )
-        except (EstoqueInsuficiente, PedidoInvalido) as exc:
-            st.error(str(exc))
+        permitido, segundos = protecao.verificar(
+            "finalizar a compra", limite=3, janela=60, bloqueio=120,
+        )
+        if not permitido:
+            st.warning(protecao.mensagem("finalizar a compra", segundos))
         else:
-            carrinho_redis.limpar()  # pedido gravado no MongoDB => limpa o carrinho no Redis
-            st.session_state["email_cliente"] = email.strip().lower()
-            st.session_state["ultimo_pedido"] = pedido["numero"]
-            st.rerun()
+            try:
+                pedido = checkout.finalizar_compra(
+                    cliente_nome=nome,
+                    cliente_email=email,
+                    carrinho=dict(itens_carrinho),
+                    endereco={"cep": cep.strip(), "logradouro": logradouro.strip(),
+                              "cidade": cidade.strip(), "uf": uf},
+                    metodo_pagamento=metodo,
+                    cupom=cupom,
+                )
+            except (EstoqueInsuficiente, PedidoInvalido) as exc:
+                st.error(str(exc))
+            else:
+                carrinho_redis.limpar()  # pedido gravado no MongoDB => limpa o carrinho no Redis
+                st.session_state["email_cliente"] = email.strip().lower()
+                st.session_state["ultimo_pedido"] = pedido["numero"]
+                st.rerun()
