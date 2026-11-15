@@ -2,6 +2,8 @@
 import json
 
 import streamlit as st
+
+from src.navigation import CATALOGO_PAGE
 from pymongo.errors import DuplicateKeyError, WriteError
 
 from src.repositories.produtos import ProdutoInvalido
@@ -109,4 +111,4 @@ if salvar:
         st.json(exc.details or {}, expanded=False)
     else:
         st.success(f"Produto cadastrado! _id: `{novo_id}`")
-        st.page_link("views/catalogo.py", label="Ver no catálogo", icon="🛍️")
+        st.page_link(CATALOGO_PAGE, label="Ver no catálogo", icon="🛍️")

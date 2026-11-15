@@ -8,6 +8,7 @@ from src import carrinho_redis
 from src.repositories.pedidos import (CUPONS, FRETE_GRATIS_ACIMA, EstoqueInsuficiente,
                                       PedidoInvalido, calcular_valores)
 from src import protecao
+from src.navigation import CATALOGO_PAGE
 from src.services import catalogo, checkout
 from src.ui import carrinho, configurar_pagina, imagem_principal, remover_do_carrinho
 from src.utils import dinheiro, fmt_brl
@@ -26,7 +27,7 @@ if numero := st.session_state.pop("ultimo_pedido", None):
 itens_carrinho = carrinho()
 if not itens_carrinho:
     st.info("Seu carrinho está vazio.")
-    st.page_link("views/catalogo.py", label="Continuar comprando", icon="🛍️")
+    st.page_link(CATALOGO_PAGE, label="Continuar comprando", icon="🛍️")
     st.stop()
 
 if (ttl := carrinho_redis.ttl_restante()) > 0:

@@ -7,8 +7,10 @@ A tela do catálogo fica em views/catalogo.py.
 """
 import streamlit as st
 
+from src.navigation import CATALOGO_PAGE
+
 pagina = st.navigation([
-    st.Page("views/catalogo.py", title="Catalogo", default=True),
+    CATALOGO_PAGE,
     st.Page("pages/1_Carrinho.py", title="Carrinho"),
     st.Page("pages/2_Pedidos.py", title="Pedidos"),
     st.Page("pages/3_Cadastrar_Produto.py", title="Cadastrar Produto"),

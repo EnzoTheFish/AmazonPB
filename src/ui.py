@@ -107,7 +107,7 @@ def _resumo_carrinho_sidebar() -> None:
         n = total_itens_carrinho()
         st.markdown(f"### 🛒 Carrinho: **{n}** {'item' if n == 1 else 'itens'}")
         if n:
-            st.page_link("pages/1_Carrinho.py", label="Ver carrinho e finalizar", icon="➡️")
+            st.page_link("pages/1_Carrinho.py", label="Ver carrinho e finalizar")
         st.divider()
         with st.expander("Status do sistema"):
             st.success(f"MongoDB conectado · {settings.mongo_db}")
