@@ -23,6 +23,10 @@ class Settings:
 
     # Carrinho ativo (Redis) — tempo até um carrinho sem alterações expirar
     carrinho_ttl: int = int(os.getenv("CARRINHO_TTL", "7200"))  # segundos (2 horas)
-
+    # Neo4j (grafo de recomendações) — Docker local (bolt://) ou AuraDB (neo4j+s://)
+    neo4j_uri: str = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+    neo4j_username: str = os.getenv("NEO4J_USERNAME", "neo4j")
+    neo4j_password: str = os.getenv("NEO4J_PASSWORD", "pbstore123")
+    neo4j_database: str = os.getenv("NEO4J_DATABASE", "neo4j")
 
 settings = Settings()
