@@ -28,5 +28,20 @@ services:
       - "6379:6379"
     command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru"]
 
+  # Grafo de recomendações. Subir com: docker compose up -d neo4j
+  # Navegador do Neo4j: http://localhost:7474  (usuário neo4j / senha = NEO4J_PASSWORD do .env)
+  neo4j:
+    image: neo4j:5-community
+    container_name: amazon_pb_neo4j
+    ports:
+      - "7474:7474"   # interface web
+      - "7687:7687"   # protocolo bolt (usado pelo Python)
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-pbstore123}
+    volumes:
+      - neo4j_data:/data
+    restart: unless-stopped
+
 volumes:
   mongo_data:
+  neo4j_data:
